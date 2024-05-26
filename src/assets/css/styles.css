@@ -1,0 +1,140 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply px-4 pt-24 pb-10 lg:p-24 bg-gradient-to-b from-indigo-500 to-sky-800;
+}
+
+input {
+  @apply px-2 py-1 border rounded shadow-inner w-full;
+}
+
+#app {
+  @apply bg-yellow-400 shadow-lg rounded-xl text-center relative;
+}
+
+.header {
+  @apply flex flex-col lg:flex-row items-center justify-between mx-10;
+}
+
+.header__img {
+  @apply flex flex-row items-start mb-4;
+}
+
+.header__img--logo {
+  @apply -mt-14 md:-mt-20 w-56 md:w-96;
+}
+.header__img--quiz {
+  @apply lg:-mt-20 w-96;
+}
+
+.quiz__title {
+  @apply text-xl font-bold text-indigo-500 uppercase mt-6 lg:mt-0;
+}
+
+.quiz__counter {
+  @apply text-white font-bold text-2xl;
+}
+
+.cards { 
+  @apply grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-2 md:gap-5 lg:gap-10 p-4 md:p-7 lg:p-10;
+}
+
+.card {
+  @apply rounded-lg shadow-md bg-white;
+}
+
+.card__image {
+  @apply h-48 p-2 flex justify-center rounded-t-lg;
+  background-image: url("./../img/bg.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+.card__body {
+  @apply flex flex-col gap-4 items-center justify-center h-32 p-4;
+}
+
+
+.card__title {
+  @apply text-2xl pt-4 capitalize;
+}
+
+.btn {
+  @apply p-2 rounded w-full border-b-4 shadow;
+}
+
+.btn--primary {
+  @apply bg-indigo-500  hover:bg-indigo-700 text-white border-indigo-600 hover:border-indigo-800;
+}
+
+.footer {   
+  @apply flex flex-col md:flex-row justify-between text-gray-800 text-xs md:text-sm p-1 md:p-5;
+}
+
+.pokeball {
+  @apply -mt-10 block w-16 h-16 md:w-24 md:h-24;
+  background: radial-gradient(
+      white 5px,
+      black 5.3px 5.6px,
+      white 5.7px 8px,
+      black 8.1px 10.6px,
+      transparent 11px),
+    linear-gradient(to bottom, red 0 25.6px, black 26.6px 30.4px, white 31.4px 64px);
+  border-radius: 50%;
+  border: 2.5px solid black;
+  box-shadow: inset -4px -2px 0 0 rgba(0, 0, 0, 0.2);
+  animation: fall 0.5s ease-in-out 1s,
+             shake 1.25s cubic-bezier(0.36, 0.07, 0.19, 0.97) 1.5s 3,
+             catch 0.5s ease-out 5.25s forwards;
+}
+/* Animation */
+@keyframes shake {
+  0% {
+    transform: translateX(0) rotate(0);
+  }
+  20% {
+    transform: translateX(-10px) rotate(-20deg);
+  }
+  30% {
+    transform: translateX(10px) rotate(20deg);
+  }
+  50% {
+    transform: translateX(-10px) rotate(-10deg);
+  }
+  60% {
+    transform: translateX(10px) rotate(10deg);
+  }
+  100% {
+    transform: translateX(0) rotate(0);
+  }
+}
+@keyframes fall {
+  0% {
+    transform: translateY(-200%);
+  }
+  60% {
+    transform: translateY(0);
+  }
+  80% {
+    transform: translateY(-10%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@media (min-width: 768px) {
+  .pokeball {
+    background: radial-gradient(
+        white 8.5px,
+        black 9px 9.5px,
+        white 10px 12.5px,
+        black 13px 16.5px,
+        transparent 17px),
+      linear-gradient(to bottom, red 0 40px, black 41px 48px, white 49px 100px);
+    border: 4px solid black; 
+    box-shadow: inset -16px -8px 0 0 rgba(0, 0, 0, 0.2); 
+  }
+}
